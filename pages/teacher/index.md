@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 学部紹介
+title: 教員・研究
 permalink: /teacher/
 ---
 
