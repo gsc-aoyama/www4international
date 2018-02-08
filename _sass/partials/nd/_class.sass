@@ -1,0 +1,129 @@
+// nd/_class.sass
+.u-cover_image
+  background-size: cover
+  background-color: #ccc
+  background-repeat: no-repeat
+  background-position: center center
+  width: 100%
+  height: 0
+  padding-top: 66.666%
+  display: block
+  overflow: hidden
+  text-indent: -9999px
+
+dl.u-table
+  +mcfix
+  width: 100%
+  dt,dd,a
+    line-height: 1.4em
+  dt,dd
+    margin: 0
+    padding: 5px
+  dt
+    float: left
+    width: 20%
+  dd
+    margin-left: 20%
+    width: 80%
+
+.hide
+  display: none !important
+
+// .clearfix
+//   +clearfix
+
+.mcfix
+  +mcfix
+
+
+.is-visible
+  @extend %is-visible
+
+.is-hidden
+  @extend %is-hidden
+
+.bgimage
+  background: no-repeat center / cover
+
+
+
+$light-grey: lightgrey
+$dark-grey: #555
+$red: #e53339
+
+$facebookBlue: #3b5998
+$twitterBlue: #4099ff
+
+.sprite
+  display: inline-block
+  fill: currentColor
+  margin: 8px
+  width: 32px
+  &.-instagram
+    fill: $dark-grey
+
+  &.-facebook
+    fill: $facebookBlue
+
+  &.-twitter
+    fill: $twitterBlue
+
+
++respond-to(narrow)
+  .is-desktop
+    display: none !important
+
++respond-to(wide)
+  .is-mobile
+    display: none !important
+
+
++respond-to("!narrow")
+  .is-narrow
+    display: none !important
+
++respond-to("!wide")
+  .is-wide
+    display: none !important
+
++respond-to("!small-only")
+  .is-small-only
+    display: none !important
+
++respond-to("!medium-up")
+  .is-medium-up
+    display: none !important
+
++respond-to("!medium-only")
+  .is-medium-only
+    display: none !important
+
++respond-to("large-up")
+  .is-medium-down
+    display: none !important
+
++respond-to("!large-only")
+  .is-large-only
+    display: none !important
+
++respond-to("!large-up")
+  .is-large-up
+    display: none !important
+
++respond-to("xlarge-up")
+  .is-large-down
+    display: none !important
+
++respond-to("!xlarge-up")
+  .is-xlarge-up
+    display: none !important
+
++respond-to("!xlarge-only")
+  .is-xlarge-only
+    display: none !important
+
++respond-to("!xxlarge-up")
+  .is-xxlarge-up
+    display: none !important
+  .is-xxlarge-only
+    display: none !important

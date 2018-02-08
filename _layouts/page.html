@@ -1,14 +1,52 @@
 ---
 layout: default
 ---
-<article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
+<div class="row">
+  <div class="medium-8 large-8 columns">
+    <section id="content">
+      <header class="content-header">
+        <div class="row">
+          <div class="columns">
+            <ul class="list-breadcrumb">
+              <li>
+                <a href="/introduction/">学部紹介</a>
+              </li>
+            </ul>
+            <h1>{{ page.title | escape }}</h1>
+            {% if page.lead %}
+            <p class="lead">{{ page.lead | escape }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </header>
+      <section class="content-section">
+        <div class="row">
+          <div class="columns">
+            {{ content }}
+          </div>
+        </div>
+      </section>
+    </section>
   </div>
+  <div class="medium-4 large-4 columns">
+    <aside id="aside">
+     {% assign pages = site.pages | where: "categories", page.categories %}
+     {% if pages %}
+       <ul class="list-menu">
+       {% for p in pages %}
+         {% if p %}
+         <li>
+           <a href="{{ p.url | relative_url }}">
+             {{ p.title | escape }}
+           </a>
+         </li>
+         {% endif %}
+       {% endfor %}
+      </ul>
+     {% endif %}
+      <p class="rss-subscribe">subscribe <a href="">via RSS</a></p>
+    </aside>
+  </div>
+</div>
 
-</article>
+

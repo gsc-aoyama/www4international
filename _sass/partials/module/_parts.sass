@@ -1,0 +1,150 @@
+$hamburget_width: 240px
+
+.m-header_nav
+  .m-hamburger_btn
+    display: none
+  +respond-to("medium-up")
+    ul
+      +inline-list
+  +respond-to("small-only")
+    display: none
+
+#container
+  transition: all 0.4s ease
+  .is-active_hamburger &
+    transform: translate($hamburget_width, 0)
+    overflow: hidden
+
+.is-active_hamburger
+  width: 100%
+  overflow: hidden
+
+.m-hamburger_content
+  +respond-to("medium-up")
+    display: none
+  position: fixed
+  z-index: 5000
+  top: 0
+  left: 0
+  z-index: 0
+  width: 100%
+  height: 100%
+  padding: 75px 0 0
+  background: $color_white
+  border-right: 1px solid $color_extralightgray
+  width: $hamburget_width
+  ul
+    li
+      line-height: 1.0
+      // border-top: 1px solid $color_extralightgray
+      + li
+    a
+      // color: $color_white
+      // padding: 25px 25px
+      display: block
+
+.m-hamburger_btn
+  +respond-to("medium-up")
+    display: none
+  $bar_color: $color_black
+  transition: all 0.4s ease
+  cursor: pointer
+  width: 40px
+  height: 40px
+  margin-left: -10px
+  padding: 12px 10px
+  display: block
+  +mcfix
+  position: fixed
+  z-index: 5001
+  top: 15px
+  left: 25px
+  & > div
+    transition: all 0.4s ease
+    background: $bar_color
+    height: 2px
+    line-height: 1
+    margin-bottom: 5px
+    float: left
+    width: 20px
+  & > div:nth-child(1),
+  & > div:nth-child(3)
+    float: right
+  .is-active_hamburger &
+    transform: scale(1) rotate(180deg) translate(0, 0)
+    & > div
+      //background: #fff
+    & > div:nth-child(1),
+    & > div:nth-child(3)
+      width: 65%
+
+    & > div:nth-child(2)
+      width: 20px
+
+    & > div:nth-child(1)
+      // transform: scale(1) rotate(135deg) translate(8px, 4px)
+      //transform: scale(1) rotate(135deg) translate(10px, -7px)
+      transform: scale(1) rotate(45deg) translate(4px, 0px)
+    & > div:nth-child(3)
+      // transform: scale(1) rotate(-135deg) translate(8px, -4px)
+      //transform: scale(1) rotate(-135deg) translate(12px, 8px)
+      transform: scale(1) rotate(-45deg) translate(4px, 0px)
+
+  .is-active_hamburger.is-active_end
+    transform: scale(1) rotate(360deg) translate(0, 0)
+    & > div
+      width: 100%
+    & > div:nth-child(1)
+      transform: scale(1) rotate(0deg) translate(0, 0)
+    & > div:nth-child(3)
+      transform: scale(1) rotate(0deg) translate(0, 0)
+
+.m-loader
+  $w: 46px
+  position: fixed
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 9999
+  fill: $key_color
+  top: 100%
+  background: rgba($color_white, .5)
+  opacity: 0
+  transition: opacity .2s
+  .is-loading &
+    opacity: 1
+    top: 0%
+  .loader-svg
+    position: absolute
+    top: 50%
+    left: 50%
+    width: $w
+    height: $w
+    margin-left: -1 * $w / 2
+    margin-top: -1 * $w / 2
+
+.m-share
+  +mcfix
+  > span
+    position: relative
+    display: block
+    float: left
+    line-height: 1em
+    margin-left: 10px
+    &:first-child
+      margin-left: 0
+  .twitter
+    width: 105px
+
+
+
+.m-youtube
+  position: relative
+  width: 100%
+  padding-top: 56.25%
+  iframe
+    position: absolute
+    top: 0
+    right: 0
+    width: 100% !important
+    height: 100% !important

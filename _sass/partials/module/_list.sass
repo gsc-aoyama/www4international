@@ -1,0 +1,35 @@
+
+.list-article
+  +float-list
+  .m-list-article
+    width: 50%
+    padding-right: 5px
+    padding-left: 5px
+    &:nth-child(2n+1)
+      clear: both
+      background: #3cc
+      // padding-left: 0
+      // margin-left: -20px
+      position: relative
+      left: -5px
+    &:nth-child(even)
+      background: #c3c
+      position: relative
+      left: +5px
+      // clear: both
+      // padding-left: 0
+    a
+      display: block
+    .picture
+      .image
+        width: 100%
+        padding-top: 75%
+        background-size: cover
+    .text
+      h2
+        +sassline(zeta, $font_sansserif, 1.8, .5, all)
+      p
+        &.category
+          +sassline(zeta, $font_sansserif, 1.8, .5, all)
+        &.date
+          +sassline(zeta, $font_sansserif, 1.8, .5, all)

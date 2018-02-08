@@ -1,0 +1,48 @@
+// %sprite-background
+//   text-indent: -9999px
+//   line-height: 1.0
+//   font-size: 1px
+//   overflow: hidden
+//   border: none
+//   display: inline-block
+//   height: 0
+//   background-repeat: no-repeat
+
+// $sprite_folder_list: "sprite_base"
+
+// @mixin sprite-background-size($width, $height, $position, $retina)
+//   background-position: 0 $position
+//   padding-top: $height
+//   width: $width
+
+// @mixin sprite-background-helper($name, $sprite, $sprite_url, $retina)
+//   background-image: $sprite_url  // setting by http_path at config.rb
+//   $width: round(image-width(sprite-file($sprite, $name)))
+//   $height: round(image-height(sprite-file($sprite, $name)))
+//   $position: round(nth(sprite-position($sprite, $name), 2))
+//   $sprite_path: sprite-path($sprite)
+//   background-image: url(../images/#{$sprite_path})  // setting by http_path at config.rb
+//   @if $retina
+//     +sprite-background-size(round($width / 2), round($height / 2), round($position / 2), $retina)
+//     +background-size(round(image-width($sprite_path) / 2) round(image-height($sprite_path) / 2))
+//   @else
+//     +sprite-background-size($width, $height, $position, $retina)
+
+// @mixin sprite-background($name, $sprite, $sprite_url_or_ratina: false, $retina: $support-retina)
+//   @extend %sprite-background
+//   @if type-of($sprite) != "string"
+//     $sprite_url: $sprite_url_or_ratina
+//     +sprite-background-helper($name, $sprite, $sprite_url, $retina)
+//   @else
+//     $retina: $sprite_url_or_ratina
+//     $sprite: sprite-map("#{$sprite}/*.png", $spacing:10px)
+//     $sprite_url: sprite-url($sprite)
+//     +sprite-background-helper($name, $sprite, $sprite_url, $retina)
+
+// @each $sprite_folder in $sprite_folder_list
+//   $sprite: sprite-map("#{$sprite_folder}/*.png", $spacing:10px)
+//   $sprite_url: sprite-url($sprite)
+//   $sprite_names: sprite-names($sprite)
+//   @each $name in $sprite-names
+//     i.#{$name}
+//       +sprite-background($name, $sprite, $sprite_url,$support-retina)

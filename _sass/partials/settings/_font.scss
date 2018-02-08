@@ -1,0 +1,84 @@
+@import "sassline/modular-scale";
+
+$get-scale: map-get($modular-scale, scale-0);
+$size: map-get($get-scale, zeta) * 1px;
+
+// Japanese Sans-Serif Normal
+$font-family-sans-serif: "YakuHanJP", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$font-weight-sans-serif: normal;
+
+// Japanese Sans-Serif Bold
+$font-family-sans-serif-bold: "YakuHanJP", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$font-weight-sans-serif-bold: bold;
+
+// Japanese Serif Normal
+$font-family-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+$font-weight-serif: normal;
+
+// Japanese Serif Bold
+$font-family-serif-bold: "游明朝", YuMincho, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+$font-weight-serif-bold: bold;
+
+// English Sans-Serif Normal
+$font-family-sans-serif-en: 'Roboto', sans-serif;
+$font-weight-sans-serif-en: 400;
+
+// English Sans-Serif Bold
+$font-family-sans-serif-bold-en: 'Roboto', sans-serif;
+$font-weight-sans-serif-bold-en: 700;
+
+// English Serif Normal
+$font-family-serif-en: 'Lora', serif, serif;
+$font-weight-serif-en: 400;
+
+// English Serif Bold
+$font-family-serif-bold-en: 'Lora', serif;
+$font-weight-serif-bold-en: 700;
+
+$font_sansserif: (
+  font-family: $font-family-sans-serif,
+  font-weight: $font-weight-sans-serif,
+  cap-height: 0.66
+) !default;
+
+$font_sansserif_bold: (
+  font-family: $font-family-sans-serif-bold,
+  font-weight: $font-weight-sans-serif-bold,
+  cap-height: 0.66
+) !default;
+
+$font_serif: (
+  font-family: $font-family-serif,
+  font-weight: $font-weight-serif,
+  cap-height: 0.66
+) !default;
+
+$font_serif_bold: (
+  font-family: $font-family-serif-bold,
+  font-weight: $font-weight-serif-bold,
+  cap-height: 0.66
+) !default;
+
+$font_sansserif_en: (
+  font-family: $font-family-sans-serif-en,
+  font-weight: $font-weight-sans-serif-en,
+  cap-height: 0.66
+) !default;
+
+$font_sansserif_bold_en: (
+  font-family: $font-family-sans-serif-bold-en,
+  font-weight: $font-weight-sans-serif-bold-en,
+  cap-height: 0.66
+) !default;
+
+$font_serif_en: (
+  font-family: $font-family-serif-en,
+  font-weight: $font-weight-serif-en,
+  cap-height: 0.66
+) !default;
+
+$font_serif_bold_en: (
+  font-family: $font-family-serif-bold-en,
+  font-weight: $font-weight-serif-bold-en,
+  cap-height: 0.66
+) !default;
