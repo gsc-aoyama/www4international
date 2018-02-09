@@ -36,6 +36,7 @@ collections:
     permalink: /:category/:path/
     title: INTRODUCTION
 
+
 # Build settings
 markdown: kramdown
 kramdown:
