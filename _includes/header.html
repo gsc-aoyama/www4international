@@ -1,10 +1,48 @@
-<header class="site-header" role="banner">
-
-  <div class="wrapper">
+<header id="header" class="s-header">
+  <div class="row">
+    <div class="columns">
+      <h1 class="h-logo"><a href="/"><img src="{{ '/assets/images/header_logo.png' | relative_url }}" alt="{{ site.title | escape }}"></a></h1>
+      <section class="m-header_nav" js-hamburger>
+        <a href="javascript:void(0)" class="m-hamburger_btn" js-hamburger_btn>
+          <div></div><div></div><div></div>
+        </a>
+        <nav class="m-hamburger_content_hide" js-hamburger_content>
+          <ul class="">
+            {% assign current = '' %}
+            {% if page.layout == 'home' %}
+            {% assign current = 'current' %}
+            {% endif %}
+            <li class="{{current}}"><a href="/">ホーム</a></li>
+            {% assign default_paths = site.pages | map: "path" %}
+            {% assign page_paths = site.header_pages | default: default_paths %}
+            {% if page_paths %}
+            {% for path in page_paths %}
+              {% assign my_page = site.pages | where: "path", path | first %}
+              {% assign current = '' %}
+              {% if page.category == my_page.category %}
+              {% assign current = 'current' %}
+              {% endif %}
+              {% if my_page.title %}
+                <li class="{{my_page.title}} {{current}}"><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% endif %}
+            <li class="{{ page.id }}"><a href="/international/"><i class="icon -international"></i>For International Students</a></li>
+          </ul>
+          <ul class="">
+            <li><a href="http://www.aoyama.ac.jp/outline/reference.html" target="_blank"><i class="icon -reference"></i>資料請求</a></li>
+            <li><a href="/exam/"><i class="icon -exam"></i>入試情報</a></li>
+            <li><a href="/general/contact.html"><i class="icon -contact"></i>お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </div>
+  <div class="wrapper hide">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-  
+    <a class="site-title" href="{{ '/'' | relative_url }}">{{ site.title | escape }}</a>
+
     {% if page_paths %}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />

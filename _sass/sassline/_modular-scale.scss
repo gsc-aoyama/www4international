@@ -1,0 +1,69 @@
+// Modular scale
+// ---------------------------------------
+$modular-scale: (
+  // usually & small-only
+  // Major Third http://www.modularscale.com/?16,28&px&1.25&web&text
+  scale-0: (
+    alpha:   28.0,
+    beta:    28.1,
+    gamma:   23.0,
+    delta:   20.0,
+    epsilon: 17.0,
+    zeta:    15.5,
+    eta:     13.5,
+    theta:   12.0,
+    iota:    10.5
+  ),
+  // medium-up
+  // Major Third http://www.modularscale.com/?17,30&px&1.25&web&text
+  scale-1: (
+    alpha:   50.0,
+    beta:    28.1,
+    gamma:   23.0,
+    delta:   20.0,
+    epsilon: 17.0,
+    zeta:    15.5,
+    eta:     13.5,
+    theta:   12.0,
+    iota:    10.5
+  ),
+  // large-up
+  // Major Third http://www.modularscale.com/?18,32&px&1.25&web&text
+  scale-2: (
+    alpha:   50.0,
+    beta:    28.1,
+    gamma:   23.0,
+    delta:   20.0,
+    epsilon: 17.0,
+    zeta:    15.5,
+    eta:     13.5,
+    theta:   12.0,
+    iota:    10.5
+  ),
+  // large-up
+  // Perfect Fourth http://www.modularscale.com/?20,40&px&1.333&web&text
+  scale-3: (
+    alpha:   50.0,
+    beta:    28.1,
+    gamma:   23.0,
+    delta:   20.0,
+    epsilon: 17.0,
+    zeta:    15.5,
+    eta:     13.5,
+    theta:   12.0,
+    iota:    10.5
+  ),
+  // xxlarge-up
+  // Aug. Fourth http://www.modularscale.com/?22,50&px&1.414&web&text
+  scale-4: (
+    alpha:   50.0,
+    beta:    28.1,
+    gamma:   23.0,
+    delta:   20.0,
+    epsilon: 17.0,
+    zeta:    15.5,
+    eta:     13.5,
+    theta:   12.0,
+    iota:    10.5
+  )
+);

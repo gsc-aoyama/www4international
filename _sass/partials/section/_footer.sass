@@ -1,0 +1,14 @@
+#footer
+  +respond-to("medium-up")
+    padding-bottom: $spacer-vertical * 8
+  +respond-to("small-only")
+    padding-bottom: $spacer-vertical * 4
+  p,
+  li
+    +sassline(zeta, $font_sansserif, 2.0, 1.8, all)
+    strong
+      +sassline(epsilon, $font_sansserif_bold, 2.0, 1.8, all)
+    a
+      color: $color_black
+  li
+    margin: 0 .5em

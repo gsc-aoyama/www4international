@@ -1,0 +1,51 @@
+@mixin respond-to($size)
+  @if $size == "small-only" or $size == "narrow" or $size == "!medium-up" or $size == "!wide"
+    @media #{$small-only}
+      @content
+  @if $size == "medium-up" or $size == "wide" or $size == "!small-only" or $size == "!narrow"
+    @media #{$medium-up}
+      @content
+  @if $size == "medium-only"
+    @media #{$medium-only}
+      @content
+  @if $size == "!medium-only"
+    @media #{$small-only}
+      @content
+    @media #{$large-up}
+      @content
+  @if $size == "large-up"
+    @media #{$large-up}
+      @content
+  @if $size == "!large-up"
+    @media #{$small-only}
+      @content
+    @media #{$medium-only}
+      @content
+  @if $size == "large-only"
+    @media #{$large-only}
+      @content
+  @if $size == "!large-only"
+    @media #{$small-only}
+      @content
+    @media #{$medium-only}
+      @content
+    @media #{$xlarge-only}
+      @content
+  @if $size == "xlarge-up"
+    @media #{$xlarge-up}
+      @content
+  @if $size == "!xlarge-up"
+    @media #{$small-only}
+      @content
+    @media #{$medium-only}
+      @content
+    @media #{$large-only}
+      @content
+  @if $size == "xlarge-only"
+    @media #{$xlarge-only}
+      @content
+  @if $size == "max-width"
+    $max-width-range: $row-width + rem-calc(1)
+    $max-width-up: "#{$screen} and (min-width:#{$max-width-range})"
+    @media #{$max-width-up}
+      @content

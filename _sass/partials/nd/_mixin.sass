@@ -1,0 +1,214 @@
+// ---------------------------------------------------------------
+// clearfix
+// ---------------------------------------------------------------
+%mcfix
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+  @if $support-ie7 == true
+    &
+      *zoom: 1
+
+@mixin mcfix
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+  @if $support-ie7 == true
+    &
+      *zoom: 1
+
+// ---------------------------------------------------------------
+// layout
+// ---------------------------------------------------------------
+
+@mixin gradient($start, $end)
+  background: $start
+  background: -webkit-gradient(linear, left top, left bottom, from($start), to($end))
+  background: -moz-linear-gradient(top, $start, $end)
+  background: -o-linear-gradient($start, $end)
+  background: linear-gradient($start, $end)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}')
+  zoom: 1
+
+@mixin float-list($mcfix: true)
+  @if $mcfix == true
+    +mcfix
+  @else
+    +clearfix
+  list-style-type: none
+  margin: 0
+  padding: 0
+  > li,
+  > a,
+  > span,
+  > img
+    margin: 0
+    padding: 0
+    display: block
+    float: left
+    border: none
+    line-height: 1.0
+
+
+@mixin centering-list($mcfix: false)
+  text-align: center
+  li
+    display: inline-block
+    *display: inline
+    *zoom: 1
+
+@mixin float_thumb_text($width: 60px, $margin: 10px)
+  +mcfix
+  .thumb,
+  .text
+    display: block
+  .thumb
+    float: left
+    width: $width
+  .text
+    margin-left:  $width + $margin
+
+@mixin grid-gutter($gutter: $column-gutter, $is-row: true)
+  @if $is-row == true
+    .row
+      margin: 0 (-1 * $gutter)
+      .columns
+        padding: 0 $gutter
+  @else
+    margin: 0 (-1 * $gutter)
+    .columns
+      padding: 0 $gutter
+
+@mixin block-gutter($gutter: $column-gutter)
+  margin: 0 (-1 * $gutter)
+  > li
+    padding: 0 $gutter
+
+// ---------------------------------------------------------------
+// absolute
+// ---------------------------------------------------------------
+%full
+  display: block
+  width: 100%
+  height: 100%
+
+%pos-zero
+  top: 0
+  left: 0
+
+%pos-half
+  top: 50%
+  left: 50%
+
+=abs-full
+  @extend %full
+  @extend %pos-zero
+  position: absolute
+
+=abs-center($width, $height, $css3: false)
+  position: absolute
+  @extend %pos-half
+  width: $width
+  height: $height
+  @if $css3 == true
+    transform: translate(-50%, -50%)
+  @else
+    margin-top: -1 * $height / 2
+    margin-left: -1 * $width / 2
+
+// ---------------------------------------------------------------
+// background
+// ---------------------------------------------------------------
+=background-image-size($path, $ratina: $support-retina)
+  display: block
+  background: url($path) center no-repeat
+  $width: image-width($path)
+  $height: image-height($path)
+  @if $ratina == true
+    width: round($width / 2)
+    height: round($height / 2)
+    background-size: cover
+  @else
+    width: $width
+    height: $height
+
+// ---------------------------------------------------------------
+// visible
+// ---------------------------------------------------------------
+%is-visible
+  visibility: visible
+  opacity: 1
+  // +opacity(1)
+
+%is-hidden
+  visibility: hidden
+  opacity: 0
+
+@mixin is-visible
+  @extend %is-visible
+
+@mixin is-hidden
+  @extend %is-hidden
+
+// ---------------------------------------------------------------
+// font-size
+// ---------------------------------------------------------------
+
+@mixin rem($property, $values)
+  $font-size: $rem-base // libs/foundation/foundation/_settings.scss
+  $px-values: ()
+  $rem-values: ()
+  @each $value in $values
+    @if $value == 0 or $value == 0px
+      $px-values: join($px-values, 0)
+      $rem-values: join($rem-values, 0)
+    @else if type-of($value) == number and not unitless($value) and (unit($value) == px)
+      $new-rem-value: $value / $font-size
+      $px-values: join($px-values, round($value))
+      $rem-values: join($rem-values, "#{$new-rem-value}rem")
+    @else if type-of($value) == number and not unitless($value) and (unit($value) == "%")
+      $px-values: join($px-values, #{$value})
+      $rem-values: join($rem-values, #{$value})
+    @else if $value == auto
+      $px-values: join($px-values, auto)
+      $rem-values: join($rem-values, auto)
+    @else
+      $value: strip-unit($value)
+      $px-values: join($px-values, round($value * $font-size))
+      $rem-values: join($rem-values, #{$value}rem)
+  #{$property}: $px-values
+  #{$property}: $rem-values
+
+// @include rem(font-size, 14px)
+// @include rem(margin, 0 auto 1)
+// @include rem(padding-bottom, 3%)
+
+@mixin list_hover
+  &:hover
+    background: $key_red_color
+    *
+      color: #fff !important
+
+
+
+
+=font-smoothing($value: on)
+  @if $value == on
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+  @else
+    -webkit-font-smoothing: subpixel-antialiased
+    -moz-osx-font-smoothing: auto
+
+
+@mixin cover_image
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+

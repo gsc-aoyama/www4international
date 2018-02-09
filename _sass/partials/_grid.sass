@@ -1,0 +1,65 @@
+.row
+  +respond-to("small-only")
+    > .columns
+      padding-right: .625rem * 2
+      padding-left: .625rem * 2
+
+.row-full
+  +respond-to("large-up")
+    > .columns
+      padding: 0
+      float: none
+      clear: both
+
+@mixin selection
+  ::-moz-selection
+    @content
+  ::selection
+    @content
+
++selection
+  color: $color_white
+  background: $key_color
+
+$spacer-vertical: $size
+
+
+#main
+  +respond-to("medium-up")
+    padding-bottom: $spacer-vertical * 4
+  +respond-to("small-only")
+    padding-bottom: $spacer-vertical * 2
+  .page-header
+    // +respond-to("medium-up")
+    //   padding-top: $spacer-vertical * 4
+    //   padding-bottom: $spacer-vertical * 2
+    //   &+.page-section
+    //     padding-top: $spacer-vertical * 2
+    // +respond-to("small-only")
+    //   padding-top: $spacer-vertical * 2
+    //   padding-bottom: $spacer-vertical
+    //   &+.page-section
+    //     padding-top: $spacer-vertical
+  .page-section
+    +respond-to("medium-up")
+      padding-top: $spacer-vertical * 4
+      padding-bottom: $spacer-vertical * 2
+      &:first-child
+        padding-top: 0
+    +respond-to("small-only")
+      padding-top: $spacer-vertical * 2
+      padding-bottom: $spacer-vertical
+    .content-header
+      +respond-to("medium-up")
+        margin-bottom: $spacer-vertical
+        padding-bottom: $spacer-vertical
+        border-bottom: 1px solid #f3f3f3
+      +respond-to("small-only")
+    .content-section
+      +respond-to("medium-up")
+        padding-top: $spacer-vertical * 4
+        padding-bottom: $spacer-vertical * 2
+      +respond-to("small-only")
+        padding-top: $spacer-vertical * 2
+        padding-bottom: $spacer-vertical
+    .content-footer

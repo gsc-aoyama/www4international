@@ -1,0 +1,24 @@
+$fontfamilies: sansserif, sansserif_bold, serif, serif_bold, sansserif_en, sansserif_bold_en, serif_en, serif_bold_en
+$scales: alpha, beta, gamma, delta, epsilon, zeta, eta, theta, iota
+
+@each $f in $fontfamilies
+  @each $s in $scales
+    $lineheight: 2.2
+    $below: .5
+    p.font_#{$f}_#{$s}
+      @if $f == 'sansserif'
+        +sassline("#{$s}", $font_sansserif, $lineheight, $below, all)
+      @else if $f == 'sansserif_bold'
+        +sassline("#{$s}", $font_sansserif_bold, $lineheight, $below, all)
+      @else if $f == 'serif'
+        +sassline("#{$s}", $font_serif, $lineheight, $below, all)
+      @else if $f == 'serif_bold'
+        +sassline("#{$s}", $font_serif_bold, $lineheight, $below, all)
+      @else if $f == 'sansserif_en'
+        +sassline("#{$s}", $font_sansserif_en, $lineheight, $below, all)
+      @else if $f == 'sansserif_bold_en'
+        +sassline("#{$s}", $font_sansserif_bold_en, $lineheight, $below, all)
+      @else if $f == 'serif_en'
+        +sassline("#{$s}", $font_serif_en, $lineheight, $below, all)
+      @else if $f == 'serif_bold_en'
+        +sassline("#{$s}", $font_serif_bold_en, $lineheight, $below, all)

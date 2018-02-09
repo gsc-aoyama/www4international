@@ -1,14 +1,67 @@
 ---
 layout: default
 ---
-<article class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
+{% assign category_pages = site.pages | where: "category", page.category |sort: 'sort' %}
+<div class="row">
+  <div class="medium-8 large-8 columns">
+    <section id="content">
+      <header class="content-header">
+        <div class="row">
+          <div class="columns">
+            {% assign parent_paths = page.permalink  | replace_first: '/','' | split: '/' %}
+            {% assign parent_paths_first = parent_paths | last %}
+            {% if page.category != 'general' and page.category != parent_paths_first %}
+            <ul class="list-breadcrumb">
+              {% assign path = '/' %}
+              {% for parent_path in parent_paths %}
+              {% assign path = path | append: parent_path | append:'/' %}
+              {% if page.permalink != path %}
+              {% assign parent_page = category_pages | where: "permalink", path | first %}
+              <li>
+                <a href="{{parent_page.url}}">{{parent_page.title}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+            {% endif %}
+            <h1>{{ page.title | escape }}</h1>
+            {% if page.lead %}
+            <p class="lead">{{ page.lead | escape }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </header>
+      <section class="content-section">
+        <div class="row">
+          <div class="columns">
+            {{ content }}
+          </div>
+        </div>
+      </section>
+    </section>
   </div>
+  <div class="medium-4 large-4 columns">
+    <aside id="aside">
+     {% if category_pages %}
+      {{category_pages.length}}
+       <ul class="list-menu">
+       {% for category_page in category_pages %}
+         {% if category_page and category_page.sort  %}
+         <li>
+           <a href="{{ category_page.url | relative_url }}">
+             {{ category_page.title | escape }}
+           </a>
+         </li>
+         {% endif %}
+       {% endfor %}
+      </ul>
+     {% endif %}
+     <div class="facebook">
+       <div class="fb-page" data-href="https://www.facebook.com/aoyamagsc/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/aoyamagsc/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aoyamagsc/">青山学院大学 地球社会共生学部</a></blockquote></div>
+     </div>
+      <p class="rss-subscribe">subscribe <a href="">via RSS</a></p>
+    </aside>
+  </div>
+</div>
 
-</article>
+

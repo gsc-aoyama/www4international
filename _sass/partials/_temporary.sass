@@ -1,0 +1,622 @@
+
+
+#main
+  &>.row:first-child
+    margin-top: 4em
+    // background: #3cc
+  // a[href*="//"]:not([href*="gsc.aoyama.ac.jp"])
+  //   &:after
+  //     content: '(external)'
+  //     background: #f00
+
+
+
+.s-cover
+  background: url(/assets/images/home_cover.jpg) no-repeat center center
+  +respond-to("large-up")
+    background-size: contain
+    min-width: 1180px
+    height: 765px
+  +respond-to("medium-only")
+    background-size: cover
+    height: 665px
+  +respond-to("small-only")
+    background-size: cover
+    height: 365px
+  p
+    +clearfix
+    +sassline(alpha, $font_sansserif_bold, 1.0, 0, all)
+    margin: 0 auto
+    padding: 0
+    line-height: 1.0
+    width: 13.75em
+    position: relative
+    +respond-to("large-up")
+      top: +230px
+    +respond-to("medium-only")
+      top: +200px
+    +respond-to("small-only")
+      top: +80px
+    span
+      line-height: 1.0
+      color: #fff
+      float: left
+      padding: .25em .2em .3em .2em
+      &:nth-child(1)
+        background: #74C25C
+      &:nth-child(2)
+        background: #FDC334
+      &:nth-child(3)
+        background: #FA9426
+      &:nth-child(4)
+        clear: both
+        margin-left: 3.5em
+        background: #E65351
+      &:nth-child(5)
+        background: #A856AA
+      &:nth-child(6)
+        background: #25AEE4
+
+.s-lead
+  padding-top: 0 !important
+  .content-section
+    padding-top: 2em !important
+  p
+    +respond-to("medium-up")
+      +sassline(epsilon, $font_sansserif, 2.8, 0, all)
+      text-align: center
+    +respond-to("small-only")
+      +sassline(epsilon, $font_sansserif, 2.0, .7, all)
+      br
+        display: none
+
+strong
+  font-weight: bold
+
+#footer
+  margin-top: 4em
+  background: $color_extralightgreen
+  .earth
+    background: url(/assets/images/footer_earth.png)
+    background-blend-mode: darken
+    mix-blend-mode: darken
+    background-size: cover
+    width: 146px
+    padding-top: 171px
+    margin: -60px auto 0 auto
+  img
+    width: 146px
+    display: block
+    margin: -100px auto 0 auto
+  p
+    text-align: center
+    strong
+  ul
+    +centering-list
+
+
+
+.card
+  +clearfix
+  line-height: 1.5rem
+  border: 1px solid $color_extralightgray
+  background: $color_extralightgray
+  margin: 2em 0
+  width: 100%
+  font-size: 0.84375rem
+  padding: 2em
+  + .card
+    margin-top: -5em !important
+  .image
+    display: block
+    width: 33.3%
+    padding-right: 20px
+    float: left
+    +respond-to("!large-up")
+      float: right
+      width: 33.3%
+      margin: 0 0 1em 1em
+  strong,
+  em
+    &:first-child
+      margin-top: 0 !important
+      padding-top: 0 !important
+    &:last-child
+      margin-bottom: 0 !important
+      padding-bottom: 0 !important
+    +respond-to("large-up")
+      width: 66.6%
+    +respond-to("!large-up")
+      p:first-child
+        margin-top: 0 !important
+        padding-top: 0 !important
+
+  strong
+    margin-top: 10px
+    display: block
+    font-weight: bold
+
+.columns>.card
+  margin-top: 0
+
+
+
+.list-sitemap
+  +float-list
+  li
+    width: 100%
+    margin: 1em 0
+    a
+      color: $color_black
+  ul
+    li
+      &:before
+        content: ''
+        display: block
+        float: left
+        width: 1px
+        padding-top: 2em
+        position: relative
+        margin-top: -1.45em
+        border-left: 1px solid $color_gray
+      &:first-child
+        &:before
+          padding-top: 1em
+          margin-top: -.5em
+      &:after
+        content: ''
+        display: block
+        float: left
+        width: 1em
+        margin-right: .5em
+        margin-top: .5em
+        border-top: 1px solid $color_gray
+
+
+#aside
+  border-top: 4px solid $color_green
+  p.title
+    +sassline(epsilon, $font_sansserif_bold, 1.0, 0, all)
+    padding: 2em .75em !important
+  ul
+    &.list-news,
+    &.list-menu
+      +float-list
+      li
+        width: 100%
+        border-bottom: 1px solid $color_extralightgreen
+        &:first-child
+          border-top: 1px solid $color_extralightgreen
+        &:hover,
+        &.current
+          background: $color_extralightgreen
+          a
+            color: $color_green
+      a
+        +sassline(zeta, $font_sansserif_bold, 1.0, 0, all)
+        padding: 1.5em .75em !important
+        color: $color_black
+        display: block
+        &:before
+          content: ' '
+          display: inline-block
+          height: 16px
+          width: 16px
+          margin-right: 5px
+          background-image: url(/assets/images/link_arrow.png)
+          background-size: contain
+          vertical-align: -3px
+    &.list-news
+      a
+        +sassline(zeta, $font_sansserif, 1.4, 0, all)
+      br
+        display: none
+      .date
+        +sassline(eta, $font_sansserif, 1.0, 0, all)
+        padding-top: 1em !important
+        display: block
+        margin-left: 22px
+    &.list-menu
+  .facebook
+    margin-top: 2em
+    blockquote
+      display: none
+  .share
+    +float-list
+    margin-top: 1em
+    li
+      margin-right: 1em
+      a
+      .sprite
+        width: 28px
+        margin: 0
+
+#content,
+#article
+  .content-header
+    margin-bottom: 3em
+    h1
+      +sassline(beta, $font_sansserif_bold, 1.0, 0, all)
+    .lead
+      +sassline(beta, $font_serif, 2.0, 1.0, all)
+      margin-top: 1em
+  .article-header
+    h1
+      +sassline(zeta, $font_sansserif_bold, 1.0, 0, all)
+      background: $color_green
+      display: inline-block
+      color: #fff
+      padding: 1em !important
+    h4
+      +sassline(beta, $font_serif, 2.5, 1.0, all)
+      margin-top: 1.5em
+  .content-section,
+  .article-section
+    padding-top: 0 !important
+    a
+      color: $color_green
+      text-decoration: underline
+    h2
+      +sassline(delta, $font_sansserif_bold, 2.0, 1.0, all)
+      border-bottom: 4px solid $color_green
+      padding: .5em .125em !important
+    h3
+      +sassline(zeta, $font_sansserif_bold, 2.0, 0, all)
+      color: $color_green
+      &::before
+        content: ""
+      margin-top: 2em
+    p
+      +clearfix
+    h4
+      +sassline(delta, $font_serif, 2.0, 2.0, all)
+      margin-top: 1.5em
+      text-indent: -1.8em
+      margin-left: 1.8em
+      .asterisk
+        margin-right: .25em
+      &::before
+        display: inline-block
+        content: ''
+        width: 1em
+        border-bottom: 1px solid #999
+        margin-right: .5em
+        font-size: 120%
+        position: relative
+        top: -.25em
+    img
+      &.right
+        width: 33.3%
+        float: right
+        margin: 0 0 1em 1em
+      &.left
+        width: 33.3%
+        float: left
+        margin: 0 1em 1em 0
+      &.center
+        width: 80%
+        margin: 0 auto
+        display: block
+    p+h2,
+    ul+h2,
+    ol+h2,
+    table+h2,
+    .card+h2
+      margin-top: 3em
+
+
+.list-links
+  +float-list
+  margin: 2em 0
+  border-top: 1px solid $color_green
+  li
+    border-bottom: 1px solid $color_extralightgreen
+    &:hover
+      background: $color_extralightgreen
+    +respond-to("medium-up")
+      width: 50%
+    +respond-to("small-only")
+    a
+      +sassline(zeta, $font_sansserif_bold, 1.0, 0, all)
+      color: $color_black
+      display: block
+      padding: 2em 1em !important
+      text-decoration: none !important
+      &:before
+        content: ' '
+        display: inline-block
+        height: 20px
+        width: 20px
+        margin-right: 5px
+        background-image: url(/assets/images/link_arrow.png)
+        background-size: contain
+        vertical-align: -4px
+  &.oneline
+    li
+      width: 100%
+
+.list-grid
+  +float-list
+  margin: 2em 0
+  &>li
+    +sassline(zeta, $font_sansserif, 1.75, 0, all)
+    +respond-to("medium-up")
+      width: 50%
+      margin-bottom: 2em
+      &:nth-child(2n+1)
+        clear: both
+        padding-right: 15px
+      &:nth-child(2n)
+        padding-left: 15px
+    +respond-to("small-only")
+      width: 100%
+
+
+.list-cta
+  +float-list
+  margin: 2em 0
+  li
+    +respond-to("medium-up")
+    +respond-to("small-only")
+    a
+      +sassline(zeta, $font_sansserif_bold, 1.0, 0, all)
+      display: inline-block
+      padding: 1.5em 2.5em !important
+      color: #fff !important
+      text-decoration: none !important
+      background: $color_green
+      border-radius: 5em
+      &:hover
+        background: $color_lightgreen
+
+.topic
+  margin-bottom: 2em
+  a
+    display: block
+    &:hover
+    .image
+      background: $color_extralightgray
+      border-top: 4px solid $color_green
+      img
+        display: block
+    .text
+      padding: 2em
+      p.tagline
+        +sassline(eta, $font_sansserif_bold, 1.0, 1.0, all)
+        color: $color_green
+      h2
+        +sassline(beta, $font_serif, 2.0, 1.0, all)
+        color: $color_black
+        &:before
+          content: ' '
+          display: inline-block
+          height: 24px
+          width: 24px
+          margin-right: 5px
+          background-image: url(/assets/images/link_arrow.png)
+          background-size: contain
+          vertical-align: 0px
+      p.description
+        +sassline(zeta, $font_sansserif, 1.7, 1.0, all)
+
+.list-pannel
+  +float-list
+  margin: 1em 0
+  li
+    +respond-to("medium-up")
+      width: 50%
+      margin-bottom: 1em
+      &:nth-child(2n)
+        padding-left: 15px
+      &:nth-child(2n+1)
+        clear: left
+        padding-right: 15px
+    +respond-to("small-only")
+  a
+    display: block
+  .image
+    img
+      width: 100%
+      display: block
+  .text
+    p
+      +sassline(zeta, $font_sansserif, 1.7, 1.0, all)
+      strong
+        +sassline(epsilon, $font_sansserif_bold, 2.7, 1.0, all)
+        &:before
+          content: ' '
+          display: inline-block
+          height: 20px
+          width: 20px
+          margin-right: 5px
+          background-image: url(/assets/images/link_arrow.png)
+          background-size: contain
+          vertical-align: -3px
+
+
+.map
+  width: 100%
+  height: 500px
+  margin-top: 2em
+
+.breadcrumb
+  display: none
+  ul
+    +float-list
+    margin-bottom: 3em
+    li
+      +sassline(eta, $font_sansserif, 1.0, 0, all)
+      color: $color_black
+      a
+        color: $color_black
+      &:after
+        content: ">"
+        margin: 0 .5em
+      &:last-child
+        &:after
+          content: ''
+
+.list-caption
+  li
+    +sassline(eta, $font_sansserif, 1.3, .5, all)
+    color: $color_darkgray
+    text-indent: -1.25em
+    margin-left: 1.25em
+    .asterisk
+      margin-right: .25em
+
+
+
+
+.list-dot
+  list-style-type: disc
+  li
+    +sassline(zeta, $font_sansserif, 1.3, .5, all)
+    color: $color_darkgray
+    margin-left: 2em
+
+.list-order
+  li
+    +sassline(zeta, $font_sansserif, 1.3, .5, all)
+    color: $color_darkgray
+    margin-left: 2.5em
+
+
+table
+  margin: 2em 0
+  *
+    border-color: $color_extralightgray !important
+    background: transparent !important
+  th,
+  td
+    text-align: left
+    padding: 1.75em !important
+    border-bottom: 1px solid $color_extralightgray !important
+  th
+    +sassline(eta, $font_sansserif_bold, 1.3, .5, all)
+    white-space: nowrap
+    width: 4em
+  td
+    +sassline(eta, $font_sansserif, 1.3, .5, all)
+
+
+.youtube
+  margin-top: 1em
+  position: relative
+  width: 100%
+  padding-top: 56.25%
+  iframe
+    position: absolute
+    top: 0
+    right: 0
+    width: 100% !important
+    height: 100% !important
+
+.list-breadcrumb
+  +float-list
+  margin-bottom: 3em
+  li
+    a
+      +sassline(zeta, $font_sansserif_bold, 1.0, 0, all)
+      background: $color_green
+      display: inline-block
+      color: #fff
+      padding: 1em .25em 1em 0 !important
+      &::after
+        content: "/"
+        margin: 0 .5em
+    &:first-child
+      a
+        padding-left: 1em !important
+    &:last-child
+      a
+        &:after
+          content: ""
+
+
+
+
+
+
+.list-teacher
+  +float-list
+  &>li
+    &::before
+      content: ''
+      border-top: 4px solid $color_green
+      display: block
+      height: 4px
+      width: 100%
+      margin-bottom: 2em
+    +respond-to("medium-up")
+      margin-top: 2em
+      margin-bottom: 4em
+      width: 50%
+      &:nth-child(2n+1)
+        clear: both
+        padding-right: 15px
+      &:nth-child(2n)
+        padding-left: 15px
+    +respond-to("small-only")
+      margin-top: 1em
+      margin-bottom: 2em
+      width: 100%
+    .photo
+      height: 120px
+      width: 120px
+      overflow: hidden
+      margin: 0 auto
+      border-radius: 200px
+      margin-bottom: 20px
+      img
+        overflow: hidden
+        width: 120px
+    .text
+      p
+        &.name
+          text-align: center
+          line-height: 1.6
+          span
+            &.jp
+              +sassline(delta, $font_sansserif_bold, 1.0, 0, all)
+              letter-spacing: .1em
+            &.en
+              +sassline(theta, $font_sansserif_en, 1.0, 0, all)
+              color: $color_gray
+              text-transform: capitalize
+        &.credit
+          text-align: center
+          line-height: 1.6
+          span
+            &:first-child
+              +sassline(eta, $font_sansserif_bold, 1.0, 0, all)
+              margin-right: .75em
+            &:nth-child(3)
+              +sassline(eta, $font_sansserif, 1.0, 0, all)
+        &.message
+          +sassline(eta, $font_sansserif, 1.5, 0, all)
+          margin-top: 1em
+          text-align: center
+          padding: 0 1em
+          strong
+            margin-right: 1em
+      h3
+      ul
+        +float-list
+        margin-top: 2em
+        li
+          text-align: center
+          width: 100%
+          margin-bottom: .5em
+          a
+            +sassline(eta, $font_sansserif, 1.0, 0, all)
+            padding: 1em !important
+            &:before
+              content: ' '
+              display: inline-block
+              height: 16px
+              width: 16px
+              margin-right: 5px
+              background-image: url(/assets/images/link_arrow.png)
+              background-size: contain
+              vertical-align: middle

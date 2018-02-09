@@ -1,0 +1,360 @@
+//---------------------------------------------------------------
+// Don't write here
+// Please rewrite settings/hoge.sass
+//---------------------------------------------------------------
+
+
+//---------------------------------------------------------------
+// reset
+//---------------------------------------------------------------
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+
+
+// Typography
+// ---------------------------------------
+html
+  +html
+
+body
+  +body
+
+
+#container
+  background: $bg_color
+  position: relative
+  @if $line-grid == true or $line-all == true
+    &
+      background-repeat: repeat-y
+      // background-image: linear-gradient(to bottom, cyan 0, rgba(255,255,255,0) 1px)
+      background-image: linear-gradient(to bottom, rgba(0, 0, 255, .1) 0, rgba(255,255,255,0) 1px)
+      background-size: 100% 1rem
+  @if $line-vartical == true or $line-all == true
+    &:before
+      content: ''
+      position: absolute
+      display: block
+      top: 0
+      left: 50%
+      width: $row-width
+      transform: translateX(-50%)
+      max-width: 100%
+      height: 100%
+      border-right: 1px solid pink
+      border-left: 1px solid pink
+      background-image: linear-gradient(to left, rgba(0, 0, 255, .1) 1px, rgba(255,255,255,0) 0px)
+      background-repeat: repeat-x
+      background-size: 8.4% 100%
+      background-position: 1px center
+      +respond-to("max-width")
+        background-size: $row-width / $total-columns 100%
+  @if $line-columns == true or $line-all == true
+    .rows
+      border-left: 1px solid red
+      border-right: 1px solid red
+    .columns
+      border-left: 1px solid blue
+      border-right: 1px solid blue
+
+
+
+// Links.
+a
+  +a
+
+h1,h2,h3,h4,h5,h6,
+.e-h1,.e-h2,.e-h3,.e-h4,.e-h5,.e-h6
+  a
+    +headline_a
+
+
+p
+  +p
+
+ul
+  +ul
+
+ol
+  +ol
+
+// Styles for typeset text.
+=typeset
+  img
+    display: block
+  // Nice underlines for text links.
+  p a, li a
+    +p_a
+
+
+  // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+  p
+    +p
+
+  // Heading level 1.
+  h1
+    +h1
+
+  // Heading level 2.
+  h2
+    +h2
+
+  // Heading level 3.
+  h3
+    +h3
+
+
+  // Heading level 4.
+  h4
+    +h4
+
+
+  // Heading level 5.
+  h5
+    +h5
+
+
+  // Heading level 6.
+  h6
+    +h6
+
+
+  // Lists.
+  ul
+    +list
+    +ul
+
+
+  // Ordered lists.
+  ol
+    +list
+    +ol
+
+
+
+  // Definition lists.
+  dl
+    +dl
+
+
+  // Tables.
+  table
+    +table
+
+
+  // Bold.
+  b, strong
+    +bold
+
+
+  // Italic.
+  em, i
+    +italic
+
+
+  // Caption and inline small text.
+  small
+    +small
+
+  .wp-caption-text
+    +caption
+
+  // Nice spacing for captions.
+  h1 + .caption,
+  h2 + .caption,
+  h3 + .caption,
+    margin-top: -1rem
+
+  h4 + .caption,
+  h5 + .caption,
+  h6 + .caption
+    margin-top: 0rem
+
+
+  // Quotes.
+  blockquote
+    +blockquote
+
+
+  // Horizontal rule.
+  hr
+    +hr
+
+
+  // Code block.
+  pre
+    +pre
+
+
+  code
+    +code
+
+// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+.e-p
+  +p
+
+// Heading level 1.
+.e-h1
+  +h1
+
+
+// Heading level 2.
+.e-h2
+  +h2
+
+
+// Heading level 3.
+.e-h3
+  +h3
+
+
+// Heading level 4.
+.e-h4
+  +h4
+
+
+// Heading level 5.
+.e-h5
+  +h5
+
+
+// Heading level 6.
+.e-h6
+  +h6
+
+
+// Lists.
+.e-ul
+  +list
+  +ul
+
+
+// Ordered lists.
+.e-ol
+  +list
+  +ol
+
+
+
+// Definition lists.
+.e-el
+  +dl
+
+
+// Tables.
+.e-table
+  +table
+
+
+
+
+// Bold.
+.e-bold
+  +bold
+
+
+// Italic.
+.e-italic
+  +italic
+
+// Caption and inline small text.
+.e-small
+  +small
+
+.wp-caption
+  max-width: 100%
+
+.wp-caption-text
+  +caption
+
+.e-caption
+  +caption
+
+
+
+
+// Nice spacing for captions.
+.e-h1 + .caption,
+.e-h2 + .caption,
+.e-h3 + .caption
+  margin-top: -1rem
+
+.e-h4 + .caption,
+.e-h5 + .caption,
+.e-h6 + .caption
+  margin-top: 0rem
+
+
+// Quotes.
+.e-blockquote
+  +blockquote
+
+
+// Horizontal rule.
+.e-hr
+  +hr
+
+
+// Code block.
+.e-pre
+  +pre
+
+
+.e-code
+  +code
+
+
+// Letter space those capitals people, Jan Tschichold would be proud.
+.upper
+  +upper
+
+
+// Real small caps.
+.small-caps
+  +small-caps
+
+
+// Consistent height numbers with OpenType.
+.lining-numerals
+  +lining-numerals
+
+// Ascending and descending numbers with OpenType.
+.oldstyle-numerals
+  +oldstyle-numerals
+
+
+.typeset
+  +typeset

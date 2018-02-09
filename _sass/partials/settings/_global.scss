@@ -1,0 +1,69 @@
+// This is the default html and body font-size for the base rem value.
+$line-grid: false;
+$line-vartical: false;
+$line-columns: false;
+$line-all: false;
+
+$rem-base-num: 16;
+$rem-base: $rem-base-num * 1px;
+
+// 各 media query の rootsize
+$rootsizes: (
+  rootsize-0: $rem-base-num,   // 30px line-height body text {small-only}
+  rootsize-1: $rem-base-num,   // 30px line-height body text {medium-up}
+  rootsize-2: $rem-base-num,   // 30px line-height body text {large-up}
+  rootsize-3: $rem-base-num,   // 30px line-height body text {xlarge-up}
+  rootsize-4: $rem-base-num    // 30px line-height body text {xxlarge-up}
+) !default;
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$row-width: rem-calc(1200);
+$total-columns: 12;
+$column-gutter: rem-calc(16 * 3);
+
+
+$small-breakpoint-px:  640;
+$medium-breakpoint-px: 1024;
+$large-breakpoint-px:  1440;
+$xlarge-breakpoint-px: 1920;
+
+$small-breakpoint:  em-calc($small-breakpoint-px);
+$medium-breakpoint: em-calc($medium-breakpoint-px);
+$large-breakpoint:  em-calc($large-breakpoint-px);
+$xlarge-breakpoint: em-calc($xlarge-breakpoint-px);
+
+
+$breakpoints: (
+  xsmall: 0,     // 0px       Mobile first
+  small: $small-breakpoint-px,   // 640px   ~ Small tablet up
+  medium: $medium-breakpoint-px,   // 800px   ~ Large tablet up
+  large: $large-breakpoint-px,  // 1024px  ~ Desktop up
+  xlarge: $xlarge-breakpoint-px   // 1600px  ~ Large desktop up
+) !default;
+
+// Gutter widths
+$gutterwidths: (
+  small: 1rem,
+  medium: 2rem,
+  large: 4rem
+) !default;
+
+// ---------------------------------------------------------------
+// Path
+// ---------------------------------------------------------------
+$project: '..' !default;
+$image_path: '#{$project}/images/';
+
+// ---------------------------------------------------------------
+// Support
+// ---------------------------------------------------------------
+$support-ie6: false;
+$support-ie7: false;
+$support-ie8: true;
+$support-mozilla: true;
+$support-webkit : true;
+$support-opera : true;
+$support-retina: false;

@@ -1,0 +1,54 @@
+// Setting
+// ・基礎系はプロジェクト全体のフォントサイズ、色などの定義
+@import "partials/settings/global"
+@import "partials/settings/font"
+@import "partials/settings/color"
+
+// vendor setting files
+@import "foundation/settings"
+@import "sassline/variables"
+@import "sassline/mixins"
+
+@import "partials/settings/typography"
+@import "partials/settings/section"
+
+// ・nd は基本編集しません
+// ・プロジェクトも応用できそうな場合は コメントして、miyamoto に asanaで asign
+// @import "generated/icons"
+@import "partials/nd/respond"
+@import "partials/nd/mixin"
+@import "partials/nd/animation"
+@import "partials/nd/base"
+
+// ページ全体のレイアウト
+// グリッド系, 横幅に関する記述
+@import "partials/grid"
+
+// ・nd は基本編集しません
+// ・プロジェクトも応用できそうな場合は コメントして、miyamoto に asanaで asign
+@import "partials/nd/class"
+@import "partials/nd/sprite"
+
+// ・１ページ内に２回以上使う可能性があるものをモジュールに定義
+// ・モジュールは、m- で始める
+// ・それ以外の sass で .m- を使ってはいけない
+@import "partials/module/parts"
+@import "partials/module/title"
+@import "partials/module/list"
+
+// 共通セクション
+// 共通化しているセクション
+// @import "partials/section/common"
+
+
+// header, footer に関する sass
+@import "partials/section/header"
+@import "partials/section/footer"
+@import "partials/section/main"
+
+//
+@import "partials/page/starter"
+
+// どこに記述すべきか不明の場合、とりあえずここに。
+// ファルファ版はまずここだけにどんどん記述すれば良い。
+@import "partials/temporary"
