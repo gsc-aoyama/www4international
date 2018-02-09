@@ -17,7 +17,7 @@ title: 青山学院大学 地球社会共生学部
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   青山学院大学の地球社会共生学部のホームページです。地球社会共生学部は社会科学系の幅広い学問基盤のもと「共生マインド」を体得したうえで、専門能力を身につけるグローバル系の学部。ここではカリキュラムや入試情報などを掲載しています。
-baseurl: "/temp4jekyll" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
