@@ -1,27 +1,38 @@
 <header id="header" class="s-header">
   <div class="row">
     <div class="columns">
-      <h1 class="h-logo"><a href="/"><img src="{{ '/assets/images/header_logo.png' | relative_url }}" alt="青山学院大学 地球社会共生学部"></a></h1>
+      <h1 class="h-logo"><a href="/"><img src="{{ '/assets/images/header_logo.png' | relative_url }}" alt="{{ site.title | escape }}"></a></h1>
       <section class="m-header_nav" js-hamburger>
         <a href="javascript:void(0)" class="m-hamburger_btn" js-hamburger_btn>
           <div></div><div></div><div></div>
         </a>
         <nav class="m-hamburger_content_hide" js-hamburger_content>
           <ul class="">
-            <li class="{{ page.id }}"><a href="/">ホーム</a></li>
-            <li class="{{ page.id }}"><a href="/introduction/">学部紹介</a></li>
-            <li class="{{ page.id }}"><a href="/teacher/">教員紹介</a></li>
-            <li class="{{ page.id }}"><a href="/campus/">学生生活</a></li>
-            <li class="{{ page.id }}"><a href="/studyabroad/">留学</a></li>
-            <li class="{{ page.id }}"><a href="/career/">就職・キャリア</a></li>
-            <li class="{{ page.id }}"><a href="/international/">{{sprite('international')}}For International Students</a></li>
-            {{ site.members | where:"graduation_year","2014" }}
-
+            {% assign current = '' %}
+            {% if page.layout == 'home' %}
+            {% assign current = 'current' %}
+            {% endif %}
+            <li class="{{current}}"><a href="/">ホーム</a></li>
+            {% assign default_paths = site.pages | map: "path" %}
+            {% assign page_paths = site.header_pages | default: default_paths %}
+            {% if page_paths %}
+            {% for path in page_paths %}
+              {% assign my_page = site.pages | where: "path", path | first %}
+              {% assign current = '' %}
+              {% if page.category == my_page.category %}
+              {% assign current = 'current' %}
+              {% endif %}
+              {% if my_page.title %}
+                <li class="{{my_page.title}} {{current}}"><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% endif %}
+            <li class="{{ page.id }}"><a href="/international/"><i class="icon -international"></i>For International Students</a></li>
           </ul>
           <ul class="">
-            <li><a href="http://www.aoyama.ac.jp/outline/reference.html" target="_blank">{{sprite('reference')}}資料請求</a></li>
-            <li><a href="/exam/">{{sprite('exam')}}入試情報</a></li>
-            <li><a href="/general/contact.html">{{sprite('contact')}}お問い合わせ</a></li>
+            <li><a href="http://www.aoyama.ac.jp/outline/reference.html" target="_blank"><i class="icon -reference"></i>資料請求</a></li>
+            <li><a href="/exam/"><i class="icon -exam"></i>入試情報</a></li>
+            <li><a href="/general/contact.html"><i class="icon -contact"></i>お問い合わせ</a></li>
           </ul>
         </nav>
       </section>
