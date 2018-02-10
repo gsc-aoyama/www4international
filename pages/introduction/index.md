@@ -16,7 +16,7 @@ sort: 1
 - [カリキュラム][curriculum]
 
 
-[interview]: /introduction/interview
-[outline]: /introduction/outline
-[policy]: /introduction/policy
-[curriculum]: /introduction/curriculum
+[interview]: {{ '/introduction/interview' | relative_url }}
+[outline]: {{ '/introduction/outline' | relative_url }}
+[policy]: {{ '/introduction/policy' | relative_url }}
+[curriculum]: {{ '/introduction/curriculum' | relative_url }}
