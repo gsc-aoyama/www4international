@@ -6,6 +6,7 @@ category: general
 sort: 3
 ---
 
+{:.list-sitemap}
 *   [学部紹介][introduction]
     *   [学部長インタビュー][introduction/interview]
     *   [地球社会共生学部とは][introduction/outline]
