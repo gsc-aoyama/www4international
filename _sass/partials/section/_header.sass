@@ -49,6 +49,13 @@
           margin: 0 8px 0 0
           font-size: 26px
           position: relative
+          top: 4px
+          &.-reference
+            font-size: 22px
+            top:3px
+          &.-contact
+            top: 1px
+
           // float: left
       +respond-to("large-up")
         &:nth-child(1)
@@ -82,7 +89,10 @@
       color: $color_black
       padding: 1.25em 1.25em !important
       display: block
-      .sprite
+      .icon
+        position: relative
         margin: 0 8px 0 0
-        width: 20px
+        font-size: 20px
         float: left
+        top: -5px
+        &.-reference

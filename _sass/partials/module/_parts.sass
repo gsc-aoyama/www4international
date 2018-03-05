@@ -1,9 +1,9 @@
 $hamburget_width: 240px
 
 .m-header_nav
-  .m-hamburger_btn
-    display: none
   +respond-to("medium-up")
+    .m-hamburger_btn
+      display: none
     ul
       +inline-list
   +respond-to("small-only")
