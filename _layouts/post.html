@@ -1,25 +1,51 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+{% assign category_pages = site.pages | where: "category", page.category |sort: 'sort' %}
+<div class="row">
+  <div class="medium-8 large-8 columns">
+    <section id="content">
+      <header class="content-header">
+        <div class="row">
+          <div class="columns">
+            <h1>{{ page.title | escape }}</h1>
+            {% if page.lead %}
+            <p class="lead">{{ page.lead | escape }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </header>
+      <section class="content-section">
+        <div class="row">
+          <div class="columns">
+            {{ content }}
+          </div>
+        </div>
+      </section>
+    </section>
   </div>
+  <div class="medium-4 large-4 columns">
+    <aside id="aside">
+      <p class="title">学部ニュース</p>
+      <ul class="list-news">
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}<br>
+              <span class="date">{{ post.date | date: "%Y.%m.%-d" }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="facebook">
+        <div class="fb-page" data-href="https://www.facebook.com/aoyamagsc/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/aoyamagsc/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aoyamagsc/">青山学院大学 地球社会共生学部</a></blockquote></div>
+      </div>
+      <ul class="share">
+        <li><a href="https://www.facebook.com/aoyamagsc/" target="_blank"><i class="icon -facebook"></i></a></li>
+        <li><a href="#" target="_blank"><i class="icon -twitter"></i></a></li>
+      </ul>
+    </aside>
+  </div>
+</div>
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
-</article>
+
