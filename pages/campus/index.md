@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 学生生活
+title: Campus Life
 permalink: /campus/
 category: campus
 ---
