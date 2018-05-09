@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 就職・キャリア
+title: Student Voices
 permalink: /career/
 category: career
 sort: 1
