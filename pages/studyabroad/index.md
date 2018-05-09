@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 留学
+title: Academics
 permalink: /studyabroad/
 category: studyabroad
 sort: 1
