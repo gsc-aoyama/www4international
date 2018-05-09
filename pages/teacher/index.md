@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 教員紹介
+title: Academics
 permalink: /teacher/
 category: teacher
 sort: 1
