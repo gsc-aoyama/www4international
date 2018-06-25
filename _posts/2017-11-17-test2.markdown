@@ -1,9 +1,0 @@
----
-layout: post
-title:  "TEST2"
-date:   2017-11-17 16:14:52 +0900
-categories: test
----
-TEST 2 
-
-TEST修正
