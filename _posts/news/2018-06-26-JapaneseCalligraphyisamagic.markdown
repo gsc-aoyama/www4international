@@ -5,6 +5,9 @@ date:   2018-06-26 16:14:52 +0900
 category: jekyll update
 ---
 
+![japanesecalligraphyisamagic](https://user-images.githubusercontent.com/416977/41879826-3a508c9c-7916-11e8-93b5-3ea5e6974ff4.jpg)
+
+
 Japanese Calligraphy is a magic!
 
 #JapaneseCalligraphy #書道 #AoyamaJSP #AoyamaGSC #青学 #地球社会共生学部 #pleaselike #followAoyamaJSP
