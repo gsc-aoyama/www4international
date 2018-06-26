@@ -1,19 +1,18 @@
 ---
 layout: page
 title: Overview
-lead: 世界の諸問題を、社会科学の力で解決しよう。
+lead: The School of Global Studies and Collaboration (GSC) was established in 2015.
 permalink: /introduction/
 category: introduction
 sort: 1
 ---
 
-地球社会共生学部では何を学ぶことができ、何が身につくのでしょう。 この学部開設に向けた思いと、学部の基本情報をお伝えします。
+The School of Global Studies and Collaboration (GSC) was established in 2015 with the goal of cultivating students’ intellectual capacity and leadership to thrive in a rapidly changing globalized world.
 
 {:.list-links}
-- [学部長インタビュー][interview]
-- [地球社会共生学部とは][outline]
-- [3つのポリシー][policy]
-- [カリキュラム][curriculum]
+- [About the University][interview]
+- [About GSC][outline]
+- [Program Description][policy]
 
 
 [interview]: {{ '/introduction/interview' | relative_url }}
