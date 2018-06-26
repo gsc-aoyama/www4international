@@ -18,4 +18,4 @@ The School of Global Studies and Collaboration (GSC) was established in 2015 wit
 [interview]: {{ '/introduction/interview' | relative_url }}
 [outline]: {{ '/introduction/outline' | relative_url }}
 [policy]: {{ '/introduction/policy' | relative_url }}
-[curriculum]: {{ '/introduction/curriculum' | relative_url }}
+
