@@ -7,6 +7,12 @@
 * 原則、Markdown記法での記述によりHTMLを書かなくてもサイトの管理ができる。
 * 基本的なテンプレートの管理方法は https://github.com/gsc-aoyama/www4gsc/wiki にマニュアル化した。
 
+### ブランチの管理方法
+* gh-pages : ウェブサイト本番ブランチ
+* develop : 新機能テスト用ブランチ
+* backupYYYY-MM-DD : バックアップ用ブランチ
+* develop-機能名 : 新機能の実施には機能名をつけたブランチを作りテストする
+
 ---
 
 ### Markdown記法
