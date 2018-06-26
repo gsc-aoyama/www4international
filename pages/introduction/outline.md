@@ -6,9 +6,9 @@ category: introduction
 sort: 3
 ---
 
-## About the University
+## About GSC
 
-Aoyama Gakuin University is a nationally renowned institution in Japanese higher education. Established in 1949 as the flagship institution of the larger Aoyama Gakuin school system, the University boasts generations of graduates that have become leaders in fields ranging from arts and athletics to business and national politics. Aoyama Gakuin, a comprehensive educational institution encompassing all levels from kindergarten to university, was founded in 1874 by American missionaries based on Christian faith. It continues to carry that legacy today with its distinctive emphasis on instilling a commitment to service and an international outlook into its students. In addition to providing high quality education in specialized fields across 24 departments, the University strives to cultivate “servant leaders” that possess both the knowledge and character to effectively serve their communities locally and globally.
+The School of Global Studies and Collaboration (GSC) was established in 2015 with the goal of cultivating students’ intellectual capacity and leadership to thrive in a rapidly changing globalized world. Students at GSC take courses from our four clusters: collaboration, sociology, business, and media and spatial information. This interdisciplinary curriculum ensures that students receive a holistic social science education that can be utilized in a wide variety of fields. GSC faculty members include a number of instructors with extensive records of practical experience in their respective fields and industries, and strive to provide students with the tools to connect theories taught in classrooms with real-world applications.
 
 
 [figure1]: {{ '/assets/images/v1/2015/03/about_dia01-300x294.gif' | relative_url }}
