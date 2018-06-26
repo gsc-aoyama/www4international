@@ -10,7 +10,7 @@ The Japan Studies Program provides comprehensive academic and extracurricular su
 
 {:.list-links}
 *   [Japan Studies Course Description][teachers]
-*   [Internship Project](/teacher/interview]
+*   [Internship Project][/teacher/interview]
 *   [Field Trips][triallesson]
 
 
