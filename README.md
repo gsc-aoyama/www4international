@@ -1,10 +1,13 @@
-## Welcome to GitHub Pages
+## この International ページの更新方法と特徴
+ウェブブラウザ経由でいつでも、どこからでもウェブサイトの管理が行なえます。
+* 最新のモダンウェブブラウザ(Chrome, Firefox, Safari, Edge)を使用すること。
+* トラブルの多い Internet Explorer は使用禁止とする。
+* このウェブサイトの管理には GitHub Pages を利用している。
+* このウェブサイトがCMSライクに使うため Jekyll技術を用いてテンプレートを作成し使用している。
+* 原則、Markdown記法での記述によりHTMLを書かなくてもサイトの管理ができる。
+* 基本的なテンプレートの管理方法は https://github.com/gsc-aoyama/www4gsc/wiki にマニュアル化した。
 
-You can use the [editor on GitHub](https://github.com/gsc-aoyama/temp4jekyll/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+### Markdown記法
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
