@@ -7,6 +7,8 @@
 * 原則、Markdown記法での記述によりHTMLを書かなくてもサイトの管理ができる。
 * 基本的なテンプレートの管理方法は https://github.com/gsc-aoyama/www4gsc/wiki にマニュアル化した。
 
+---
+
 ### Markdown記法
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
