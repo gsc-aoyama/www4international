@@ -9,7 +9,11 @@ sort: 1
 The Japan Studies Program provides comprehensive academic and extracurricular support to international students. 
 
 {:.list-links}
-*   [Japan Studies Course Description](/teacher/teachers/)
-*   [Internship Project](/teacher/interview/)
-*   [Field Trips](/teacher/triallesson/)
+*   [Japan Studies Course Description][teachers]
+*   [Internship Project](/teacher/interview]
+*   [Field Trips][triallesson]
 
+
+[teachers]: {{ '/teacher/teachers' | relative_url }}
+[outline]: {{ '/teacher/interview' | relative_url }}
+[policy]: {{ '/teacher/triallesson' | relative_url }}
