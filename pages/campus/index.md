@@ -5,10 +5,4 @@ permalink: /campus/
 category: campus
 ---
 
-The Japan Studies Program provides comprehensive academic and extracurricular support to international students.
-
-{:.list-links}
-*   [Student Support and Activities](http://www.aoyama.ac.jp/outline/information/battel/undergraduate_tuition_first.html)
-*   [Facilities](http://www.aoyama.ac.jp/life/health/dormitory/dormitory_sagamihara.html)
-*   [Accommodations](http://www.aoyama.ac.jp/life/expenses/scholarship_prospective/)
-
+All international students stay at the Global Residence, a dormitory immediately adjacent to the university campus. The dormitory houses both Japanese and international students and provides space communal for dining and recreation, allowing students to make informal connections with their peers.
